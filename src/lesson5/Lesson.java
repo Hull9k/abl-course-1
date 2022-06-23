@@ -14,6 +14,7 @@ import java.time.LocalDate;
 
 public class Lesson {
     private static final Pattern fileNamePattern = Pattern.compile("report_\\d{2}_\\d{4}.txt");
+    private static final String fileHeader = "магазин;доход;расход;дата";
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     public static void main(String[] args) throws IOException, ParseException {
@@ -72,7 +73,7 @@ public class Lesson {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         while (bufferedReader.ready()) {
             String line = bufferedReader.readLine();
-            if (!line.startsWith("магазин")) {
+            if (!line.equals(fileHeader)) {
                 String[] parts = line.split(";");
                 records.add(new ReportRecord(parts[0], Double.parseDouble(parts[1]), Double.parseDouble(parts[2]), parts[3]));
             }
