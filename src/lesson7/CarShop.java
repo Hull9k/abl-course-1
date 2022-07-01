@@ -13,11 +13,7 @@ public class CarShop {
             car.getCost();
             System.out.println("Хочешь купить авто?");
         } catch (Exception e) {
-<<<<<<< HEAD
             System.out.println(e.getMessage());
-=======
-            System.out.println("Неизвестна мне");
->>>>>>> ed29062 (lesson 7)
             System.out.println("Давайте посмотрим другое авто?");
         }
     }
