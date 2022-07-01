@@ -11,7 +11,11 @@ public class Car {
         if (this.cost > 0) {
             System.out.println(this.cost);
         } else {
+<<<<<<< HEAD
             throw new RuntimeException("Неизвестна мне");
+=======
+            throw new RuntimeException("Стоимость < 0");
+>>>>>>> ed29062 (lesson 7)
         }
     }
 }
